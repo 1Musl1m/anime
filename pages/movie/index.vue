@@ -11,12 +11,12 @@ const indicator = h(LoadingOutlined, {
 });
 
 const page = ref(1);
-const { pending, data: animes } = useFetch(`https://shikimori.one/api/animes?page=${page.value}&limit=49&order=popularity`,
+const { pending, data: animes } = useFetch(
+    `https://shikimori.one/api/animes?page=${page.value}&limit=49&order=popularity`,
     {
         lazy: true,
     }
 );
-
 </script>
 
 <template>

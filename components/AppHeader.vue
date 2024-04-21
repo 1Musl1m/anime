@@ -1,10 +1,3 @@
-<script setup lang="ts">
-const isOpen = ref(false)
-
-const toggleMenu = () => {
-    isOpen.value = !isOpen.value;
-}
-</script>
 <template>
     <div>
         <nav class="border-b-2">
@@ -60,11 +53,7 @@ const toggleMenu = () => {
                         </li>
                     </ul>
                 </div>
-                <div>
-                    <a-button type="link" danger>
-                        <MenuUnfoldOutlined :style="{fontSize: '20px', color: '#fff'}"/>
-                    </a-button>
-                </div>
+                <LayoutSidebar />
             </div>
         </nav>
     </div>
