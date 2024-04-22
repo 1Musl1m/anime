@@ -10,6 +10,55 @@ const afterOpenChange = (bool: boolean) => {
 const showDrawer = () => {
     open.value = true;
 };
+
+const onClose = () => {
+    open.value = false;
+};
+
+const navSide = [
+    {
+        id: 1,
+        icon: '/image/navbar/home.svg',
+        name: 'Главная',
+        link: '/'
+    },
+    {
+        id: 2,
+        icon: '/image/navbar/friends.svg',
+        name: 'Друзья',
+        link: '/'
+    },
+    {
+        id: 3,
+        icon: '/image/navbar/message.svg',
+        name: 'Чат',
+        link: '/'
+    },
+    {
+        id: 4,
+        icon: '/image/navbar/room.svg',
+        name: 'Комната',
+        link: '/'
+    },
+    {
+        id: 5,
+        icon: '/image/navbar/like.svg',
+        name: 'Избранное',
+        link: '/'
+    },
+    {
+        id: 6,
+        icon: '/image/navbar/settings.svg',
+        name: 'Настройки',
+        link: '/'
+    },
+    {
+        id: 7,
+        icon: '/image/navbar/help.svg',
+        name: 'Помощь',
+        link: '/'
+    },
+]
 </script>
 
 <template>
@@ -21,6 +70,11 @@ const showDrawer = () => {
         placement="right"
         @after-open-change="afterOpenChange"
     >
-        <p v-for="n in 10">items</p>
+        <div v-for="nav in navSide" :key="nav.id" class="flex flex-col gap-8">
+            <NuxtLink :to="nav.link" class="flex items-center gap-4 text-xl"  @click="onClose">
+                <img :src="nav.icon" alt="">
+                <h1>{{ nav.name }}</h1>
+            </NuxtLink>
+        </div>
     </a-drawer>
 </template>

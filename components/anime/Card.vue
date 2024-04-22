@@ -9,7 +9,7 @@ defineProps({
 
 <template>
     <div class="w-[200px] rounded flex flex-col gap-3">
-        <NuxtLink :to="`/movie/${anime.id}/`" class="w-full">
+        <NuxtLink :to="`/movie/${anime.id}`" class="w-full">
             <NuxtImg
                 :src="`https://shikimori.one${anime.image.original}`"
                 :alt="anime.russian"

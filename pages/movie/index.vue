@@ -31,6 +31,7 @@ const { pending, data: animes } = useFetch(
                 v-else
             />
         </div>
+        <a-back-top />
     </div>
     <!-- <a-button>Добавить</a-button> -->
 </template>
