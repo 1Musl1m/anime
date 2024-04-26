@@ -21,7 +21,7 @@ const { pending, data: animes } = useFetch(
 
 <template>
     <div class="container flex flex-col">
-        <h1 class="text-3xl font-bold text-center">Список фильмов</h1>
+        <h1 class="text-3xl font-bold text-center">Список аниме и фильмов</h1>
         <div class="flex items-center justify-between flex-wrap mt-10 px-4">
             <a-spin :indicator="indicator" v-if="pending" />
             <AnimeCard

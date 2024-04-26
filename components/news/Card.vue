@@ -8,15 +8,15 @@ defineProps({
 </script>
 
 <template>
-    <div class="flex items-center justify-between flex-wrap">
+    <div>
         <div
-            class="border-2 rounded-lg shadow-md mb-5 p-3"
+            class="border-2 rounded-lg shadow-md mb-5 p-3 flex flex-col items-start"
             data-aos="fade-up"
         >
             <img
                 :src="article.image"
                 alt="Article Image"
-                width="650"
+                width="600"
                 height="400"
                 class="object-cover mb-4 rounded-md"
             />

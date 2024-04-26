@@ -1,11 +1,6 @@
 <script lang="ts" setup>
 import { ref } from "vue";
-
 const open = ref<boolean>(false);
-
-const afterOpenChange = (bool: boolean) => {
-    console.log("open", bool);
-};
 
 const showDrawer = () => {
     open.value = true;
@@ -68,7 +63,6 @@ const navSide = [
         style="color: black; background-color: rgb(202, 202, 202)"
         title="Меню"
         placement="right"
-        @after-open-change="afterOpenChange"
     >
         <div v-for="nav in navSide" :key="nav.id" class="flex flex-col gap-8">
             <NuxtLink :to="nav.link" class="flex items-center gap-4 text-xl"  @click="onClose">

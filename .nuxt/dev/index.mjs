@@ -1080,7 +1080,7 @@ const errorDev = /*#__PURE__*/Object.freeze({
   template: template$1
 });
 
-const news = defineEventHandler((event) => {
+const news = defineEventHandler(() => {
   return {
     articles: [
       {
