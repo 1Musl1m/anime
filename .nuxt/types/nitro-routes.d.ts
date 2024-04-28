@@ -3,6 +3,9 @@ import type { Serialize, Simplify } from 'nitropack'
 declare module 'nitropack' {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
+    '/api/anime': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/anime').default>>>>
+    }
     '/api/news': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/news').default>>>>
     }

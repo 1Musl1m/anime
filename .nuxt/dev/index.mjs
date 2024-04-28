@@ -863,10 +863,12 @@ const _87Faos = lazyEventHandler(() => {
   return useBase(opts.baseURL, ipxHandler);
 });
 
+const _lazy_usRHXV = () => Promise.resolve().then(function () { return anime; });
 const _lazy_Sir72s = () => Promise.resolve().then(function () { return news$1; });
 const _lazy_1GZphB = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
+  { route: '/api/anime', handler: _lazy_usRHXV, lazy: true, middleware: false, method: undefined },
   { route: '/api/news', handler: _lazy_Sir72s, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_error', handler: _lazy_1GZphB, lazy: true, middleware: false, method: undefined },
   { route: '/_ipx/**', handler: _87Faos, lazy: false, middleware: false, method: undefined },
@@ -1078,6 +1080,29 @@ const template$1 = _template;
 const errorDev = /*#__PURE__*/Object.freeze({
   __proto__: null,
   template: template$1
+});
+
+const fetchAnimeDetails = async (id) => {
+  const response = await fetch(`https://shikimori.one/api/animes/${id}`);
+  const data = await response.json();
+  return data;
+};
+const fetchAnimeImages = async (id) => {
+  const response = await fetch(`https://shikimori.one/api/animes/${id}/screenshots`);
+  const data = await response.json();
+  return data;
+};
+const fetchAnimeSimilars = async (id) => {
+  const response = await fetch(`https://shikimori.one/api/animes/${id}/similar`);
+  const data = await response.json();
+  return data;
+};
+
+const anime = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  fetchAnimeDetails: fetchAnimeDetails,
+  fetchAnimeImages: fetchAnimeImages,
+  fetchAnimeSimilars: fetchAnimeSimilars
 });
 
 const news = defineEventHandler(() => {
