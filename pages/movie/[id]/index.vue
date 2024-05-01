@@ -1,16 +1,23 @@
 <script setup lang="ts">
+export type Similar = {
+    id: number;
+    russian: string;
+    image: Screenshot;
+    kind: number;
+    episodes: number;
+    episodes_aired: number;
+    score: number;
+};
+export type Screenshot = {
+    original: string;
+    preview: string;
+}
+export type ScreenshotResponce = Screenshot[]
+
 const route = useRoute();
-const { data: detail } = await useFetch(
-    `https://shikimori.one/api/animes/${route.params.id}`, 
-);
-
-const { data: images } = await useFetch(
-    `https://shikimori.one/api/animes/${route.params.id}/screenshots`
-);
-
-const { data: similars } = await useFetch(
-    `https://shikimori.one/api/animes/${route.params.id}/similar`
-);
+const { data: detail } = await useFetch(`https://shikimori.one/api/animes/${route.params.id}`);
+const { data: images } = await useFetch<ScreenshotResponce>(`https://shikimori.one/api/animes/${route.params.id}/screenshots`);
+const { data: similars } = await useFetch<Similar[]>(`https://shikimori.one/api/animes/${route.params.id}/similar`);
 </script>
 
 <template>
@@ -27,7 +34,6 @@ const { data: similars } = await useFetch(
                             :src="`https://shikimori.one${image.original}`"
                             class="rounded-xl"
                             fit="contain"
-                            sizes="100vw"
                             width="600px"
                         />
                     </div>

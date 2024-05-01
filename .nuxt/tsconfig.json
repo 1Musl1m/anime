@@ -123,7 +123,7 @@
     "skipLibCheck": true,
     "isolatedModules": true,
     "useDefineForClassFields": true,
-    "strict": true,
+    "strict": false,
     "noImplicitThis": true,
     "esModuleInterop": true,
     "types": [],
