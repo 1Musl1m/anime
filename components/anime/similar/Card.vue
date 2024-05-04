@@ -1,10 +1,9 @@
 <script setup lang="ts">
-defineProps({
-    similar: {
-        type: Object,
-        required: true,
-    },
-});
+import type { Anime } from '~/types/anime';
+
+defineProps<{
+    similar: Anime
+}>()
 </script>
 
 <template>

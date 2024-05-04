@@ -1,10 +1,9 @@
 <script setup lang="ts">
-defineProps({
-    detail: {
-        type: Object,
-        required: true,
-    },
-});
+import type { Detail } from "~/types/anime";
+
+defineProps<{
+    detail: Detail;
+}>();
 </script>
 
 <template>
@@ -37,9 +36,14 @@ defineProps({
                     Рейтинг: {{ detail.score }}
                 </p>
             </div>
-            <div class="py-1 px-2 bg-[#161921] rounded-sm">
-                <p class="text-white text-sm font-bold capitalize">
-                    Формат: {{ detail.genres.russian }}
+            <div class="py-1 px-2 bg-[#161921] rounded-sm flex items-center gap-2">
+                Жанр :
+                <p
+                    class="text-white text-sm font-bold capitalize"
+                    v-for="genre in detail.genres"
+                    :key="genre.id"
+                >
+                    {{ genre.russian }}
                 </p>
             </div>
         </div>

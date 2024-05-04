@@ -1,10 +1,9 @@
 <script setup lang="ts">
-defineProps({
-    anime: {
-        type: Object,
-        required: true,
-    },
-});
+import type { Anime } from '~/types/anime';
+
+defineProps<{
+    anime: Anime
+}>()
 </script>
 
 <template>

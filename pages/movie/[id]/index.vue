@@ -1,29 +1,16 @@
 <script setup lang="ts">
-export type Similar = {
-    id: number;
-    russian: string;
-    image: Screenshot;
-    kind: number;
-    episodes: number;
-    episodes_aired: number;
-    score: number;
-};
-export type Screenshot = {
-    original: string;
-    preview: string;
-}
-export type ScreenshotResponce = Screenshot[]
+import type { Detail, Screenshot, Anime } from '~/types/anime';
 
 const route = useRoute();
-const { data: detail } = await useFetch(`https://shikimori.one/api/animes/${route.params.id}`);
-const { data: images } = await useFetch<ScreenshotResponce>(`https://shikimori.one/api/animes/${route.params.id}/screenshots`);
-const { data: similars } = await useFetch<Similar[]>(`https://shikimori.one/api/animes/${route.params.id}/similar`);
+const { data: detail } = await useFetch<Detail>(`https://shikimori.one/api/animes/${route.params.id}`);
+const { data: images } = await useFetch<Screenshot[]>(`https://shikimori.one/api/animes/${route.params.id}/screenshots`);
+const { data: similars } = await useFetch<Anime[]>(`https://shikimori.one/api/animes/${route.params.id}/similar`);
 </script>
 
 <template>
     <div class="mt-10 px-10">
         <div class="container">
-            <AnimeDetailCard :detail="detail" />
+            <AnimeDetailCard :detail="detail"/>
         </div>
         <a-flex gap="large" class="mt-5 border-t-2 pt-3">
             <div class="flex flex-col gap-4">

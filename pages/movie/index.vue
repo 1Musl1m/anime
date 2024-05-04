@@ -1,7 +1,8 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 import { LoadingOutlined } from "@ant-design/icons-vue";
 import { h } from "vue";
+import type { Anime } from "~/types/anime";
 
 const indicator = h(LoadingOutlined, {
     style: {
@@ -11,7 +12,7 @@ const indicator = h(LoadingOutlined, {
 });
 
 const page = ref(1);
-const { pending, data: animes } = useFetch(
+const { pending, data: animes } = useFetch<Anime[]>(
     `https://shikimori.one/api/animes?page=${page.value}&limit=49&order=popularity`,
     {
         lazy: true,
