@@ -60,15 +60,15 @@ const navSide = [
     <UnorderedListOutlined @click="showDrawer" class="text-xl" />
     <a-drawer
         v-model:open="open"
-        style="color: black; background-color: rgb(202, 202, 202)"
+        style="background-color: rgb(202, 202, 202)"
         title="Меню"
         placement="right"
     >
-        <div v-for="nav in navSide" :key="nav.id" class="flex flex-col gap-8">
-            <NuxtLink :to="nav.link" class="flex items-center gap-4 text-xl"  @click="onClose">
+        <a-flex gap="middle" vertical v-for="nav in navSide" :key="nav.id">
+            <NuxtLink :to="nav.link" class="flex gap-3 text-xl mb-3 hover:text-red-600"  @click="onClose">
                 <img :src="nav.icon" alt="">
                 <h1>{{ nav.name }}</h1>
             </NuxtLink>
-        </div>
+        </a-flex>
     </a-drawer>
 </template>
