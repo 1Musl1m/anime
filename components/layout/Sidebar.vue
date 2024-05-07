@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { ref } from "vue";
 const open = ref<boolean>(false);
 
 const showDrawer = () => {
@@ -60,7 +59,7 @@ const navSide = [
     <UnorderedListOutlined @click="showDrawer" class="text-xl" />
     <a-drawer
         v-model:open="open"
-        style="background-color: rgb(202, 202, 202)"
+        style="background-color: rgb(202, 202, 202); color: gray"
         title="Меню"
         placement="right"
     >
