@@ -11,6 +11,7 @@ const { data: similars } = await useFetch<Anime[]>(`https://shikimori.one/api/an
     <div>
         <Head>
             <Title>{{ detail.russian }}</Title>
+            <Meta name="description" content={{ detail.name }}></Meta>
         </Head>
     </div>
     <div class="mt-10 px-10">

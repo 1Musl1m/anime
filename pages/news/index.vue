@@ -102,6 +102,12 @@ const articles = [
 </script>
 
 <template>
+    <div>
+        <Head>
+            <Title>Anime | | Новости</Title>
+            <Meta name="description" content="Новости"></Meta>
+        </Head>
+    </div>
     <div class="mt-10 p-8">
         <header class="text-center mb-8">
             <h1 class="text-3xl font-bold" data-aos="fade-up">
@@ -109,12 +115,6 @@ const articles = [
             </h1>
         </header>
         <main>
-            <!-- <NewsCard
-                v-for="article in articles"
-                :key="article.id"
-                :article="article"
-                class="flex items-center justify-between"
-            /> -->
             <a-flex wrap="wrap" justify="space-between">
                 <NewsCard
                     v-for="article in articles"

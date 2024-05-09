@@ -5,6 +5,12 @@ const handleMessage = () => {
 </script>
 
 <template>
+    <div>
+        <Head>
+            <Title>Ashanti</Title>
+            <Meta name="description" content="Ashanti" />
+        </Head>
+    </div>
     <header class="p-24 flex flex-col gap-7 relative" data-aos="fade-up">
         <h1 class="text-6xl tracking-widest z-10">
             Фильмы, сериалы,<br />

@@ -1,19 +1,18 @@
 <script setup lang="ts">
 import { useAnimeStore } from "~/store";
-useHead({
-    title: 'Anime',
-    meta: [
-        { name: 'description', content: 'Anime' },
-    ],
-})
 const animeStore = useAnimeStore()
-
 onMounted(() => {
     animeStore.fetchAnimes()
 });
 </script>
 
 <template>
+    <div>
+        <Head>
+            <Title>Anime</Title>
+            <Meta name="description" content="Anime" />
+        </Head>
+    </div>
     <div class="container flex flex-col">
         <h1 class="text-3xl font-bold text-center p-4">Список аниме и фильмов</h1>
         <div class="flex items-center gap-3 flex-wrap px-4">
