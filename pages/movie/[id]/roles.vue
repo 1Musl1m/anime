@@ -1,14 +1,15 @@
-<script setup>
+<script setup lang="ts">
+import type { Actor, Character } from "~/types/anime";
 const route = useRoute();
-const { data: actors } = await useFetch(
+const { data: actors } = await useFetch<Actor>(
     `https://shikimori.one/api/animes/${route.params.id}/roles`
 );
-
-const obj = JSON.stringify(actors.value)
 </script>
 
 <template>
     <div>
-        <h1>Текущий параметр: {{ route.params.id }}</h1>
+        <div v-for="actor in actors">
+            <div>{{ actor.character }}</div>
+        </div>
     </div>
 </template>

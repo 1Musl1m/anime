@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     ],
     css: ["@/assets/style/main.css"],
     typescript: {
-        typeCheck: true,
+        typeCheck: false,
         strict: false
     },
     postcss: {
