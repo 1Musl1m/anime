@@ -2,7 +2,7 @@
     <div>
         <nav class="border-b-2">
             <div
-                class="flex flex-wrap items-center justify-between py-11 px-20"
+                class="flex flex-wrap items-center justify-between py-11 px-20 lg:px-10 md:px-5"
             >
                 <NuxtLink
                     to="/"
@@ -16,7 +16,7 @@
                 </NuxtLink>
                 <div>
                     <ul
-                        class="flex items-start gap-14 font-medium rtl:space-x-reverse md:hidden"
+                        class="flex items-start gap-14 font-medium rtl:space-x-reverse sm:hidden md:gap-6"
                     >
                         <li>
                             <NuxtLink
@@ -53,6 +53,7 @@
                         </li>
                     </ul>
                 </div>
+                <Sidebar />
             </div>
         </nav>
     </div>

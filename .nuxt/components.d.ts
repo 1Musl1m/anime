@@ -2,6 +2,7 @@
 interface _GlobalComponents {
       'AppFooter': typeof import("../components/AppFooter.vue")['default']
     'AppHeader': typeof import("../components/AppHeader.vue")['default']
+    'Sidebar': typeof import("../components/Sidebar.vue")['default']
     'AnimeCard': typeof import("../components/anime/Card.vue")['default']
     'AnimeDetailCard': typeof import("../components/anime/DetailCard.vue")['default']
     'AnimeSimilarCard': typeof import("../components/anime/similar/Card.vue")['default']
@@ -957,6 +958,7 @@ interface _GlobalComponents {
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
       'LazyAppFooter': typeof import("../components/AppFooter.vue")['default']
     'LazyAppHeader': typeof import("../components/AppHeader.vue")['default']
+    'LazySidebar': typeof import("../components/Sidebar.vue")['default']
     'LazyAnimeCard': typeof import("../components/anime/Card.vue")['default']
     'LazyAnimeDetailCard': typeof import("../components/anime/DetailCard.vue")['default']
     'LazyAnimeSimilarCard': typeof import("../components/anime/similar/Card.vue")['default']
@@ -1926,6 +1928,7 @@ declare module 'vue' {
 
 export const AppFooter: typeof import("../components/AppFooter.vue")['default']
 export const AppHeader: typeof import("../components/AppHeader.vue")['default']
+export const Sidebar: typeof import("../components/Sidebar.vue")['default']
 export const AnimeCard: typeof import("../components/anime/Card.vue")['default']
 export const AnimeDetailCard: typeof import("../components/anime/DetailCard.vue")['default']
 export const AnimeSimilarCard: typeof import("../components/anime/similar/Card.vue")['default']
@@ -2881,6 +2884,7 @@ export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const LazyAppFooter: typeof import("../components/AppFooter.vue")['default']
 export const LazyAppHeader: typeof import("../components/AppHeader.vue")['default']
+export const LazySidebar: typeof import("../components/Sidebar.vue")['default']
 export const LazyAnimeCard: typeof import("../components/anime/Card.vue")['default']
 export const LazyAnimeDetailCard: typeof import("../components/anime/DetailCard.vue")['default']
 export const LazyAnimeSimilarCard: typeof import("../components/anime/similar/Card.vue")['default']

@@ -8,6 +8,13 @@ export interface Anime {
     score: number;
 }
 
+interface Videos {
+    id: number;
+    url: string;
+    image_url: string;
+    name: string;
+}
+
 export interface Detail {
     id: number;
     name: string;
@@ -19,6 +26,7 @@ export interface Detail {
     episodes_aired: number;
     score: number;
     genres: Genres[]
+    videos: Videos[]
 }
 
 interface Genres {

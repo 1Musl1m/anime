@@ -10,17 +10,17 @@ defineProps<{
     <NuxtImg
         :src="`https://shikimori.one${detail.image.original}`"
         :alt="detail.name"
-        class="rounded-xl"
+        class="rounded-xl lg:h-[400px] lg:w-[300px]"
         width="350"
     />
-    <div class="flex flex-col gap-3">
-        <h1 class="text-5xl font-bold">
+    <div class="flex flex-col gap-3 lg:gap-1">
+        <h1 class="text-5xl font-bold lg:text-3xl">
             {{ detail.russian }} / {{ detail.name }}
         </h1>
         <br />
         <p class="text-gray-400">{{ detail.description }}</p>
         <br />
-        <div class="inf">
+        <div class="inf lg:flex lg:flex-wrap">
             <div class="py-1 px-2 bg-[#161921] rounded-sm">
                 <p class="text-white text-sm font-bold capitalize">
                     Формат: {{ detail.kind }}
@@ -47,8 +47,8 @@ defineProps<{
                 </p>
             </div>
         </div>
-        <NuxtLink :to="`/movie/${detail.id}/roles`">
-            <a-button type="primary" danger>Более подробная информаци</a-button>
+        <NuxtLink>
+            <a-button type="primary" danger>Смотреть</a-button>
         </NuxtLink>
     </div>
 </template>
